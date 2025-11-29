@@ -163,5 +163,5 @@ For further customization or help, check out the comments in the code or adjust 
 
 ## License
 
-Free to use for private and non-commercial FiveM servers.
+Free to use for FiveM servers.
 Selling or copying the code is prohibited!
