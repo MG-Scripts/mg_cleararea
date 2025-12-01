@@ -8,12 +8,7 @@ local QBCore = nil
 if Config.Framework == 'ESX' then
     ESX = exports[Config.ESXExport]:getSharedObject()    
 elseif Config.Framework == 'QBCore' then
-    CreateThread(function()
-        while QBCore == nil do
-            QBCore = exports[Config.QBCoreExport]:GetCoreObject()
-            Wait(0)
-        end
-    end)
+    QBCore = exports[Config.QBCoreExport]:GetCoreObject()
 end
 
 -- Custom Notification Function
@@ -277,4 +272,5 @@ end, false)
 
 -- Keybind
 RegisterKeyMapping(Config.CommandName, 'Zone Manager öffnen', 'keyboard', Config.Keybind)
+
 
