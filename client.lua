@@ -6,12 +6,7 @@ local ESX = nil
 local QBCore = nil
 
 if Config.Framework == 'ESX' then
-    CreateThread(function()
-        while ESX == nil do
-            TriggerEvent(Config.ESXExport .. ':get  SharedObject', function(obj) ESX = obj end)
-            Wait(0)
-        end
-    end)
+    ESX = exports[Config.ESXExport]:getSharedObject()    
 elseif Config.Framework == 'QBCore' then
     CreateThread(function()
         while QBCore == nil do
@@ -282,3 +277,4 @@ end, false)
 
 -- Keybind
 RegisterKeyMapping(Config.CommandName, 'Zone Manager öffnen', 'keyboard', Config.Keybind)
+
